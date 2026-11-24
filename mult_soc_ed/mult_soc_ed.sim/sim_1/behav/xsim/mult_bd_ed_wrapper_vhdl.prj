@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_rst_ps7_0_50M_0/sim/mult_bd_ed_rst_ps7_0_50M_0.vhd" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_axi_bram_ctrl_0_0/sim/mult_bd_ed_axi_bram_ctrl_0_0.vhd" \
+
+# Do not sort compile order
+nosort

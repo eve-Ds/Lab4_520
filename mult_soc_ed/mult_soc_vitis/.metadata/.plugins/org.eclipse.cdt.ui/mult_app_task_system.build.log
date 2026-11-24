@@ -1,0 +1,10 @@
+15:33:24 **** Incremental Build of configuration Debug for project mult_app_task_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 62633 C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm standalone_domain C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm --sys_config mult_plat_task --bif C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task_system/Debug/system.bif --bitstream C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit --elf C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit
+Running C:/Xilinx/Vitis/2023.1/bin/bootgen  -image C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+15:33:33 Build Finished (took 8s.260ms)
+

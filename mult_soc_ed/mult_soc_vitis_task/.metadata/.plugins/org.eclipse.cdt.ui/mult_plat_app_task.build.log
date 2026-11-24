@@ -1,0 +1,10 @@
+19:01:16 **** Incremental Build of configuration Debug for project mult_plat_app_task ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+
+19:01:16 Build Finished (took 480ms)
+

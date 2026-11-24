@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../mult_soc_ed.gen/sources_1/bd/mult_bd_ed/ipshared/ec67/hdl" --include "../../../../mult_soc_ed.gen/sources_1/bd/mult_bd_ed/ipshared/aed8/hdl" --include "C:/Xilinx/Vivado/2023.1/data/xilinx_vip/include" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_processing_system7_0_0/sim/mult_bd_ed_processing_system7_0_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ipshared/0f38/hdl/mult_16_bit_v1_0_S00_AXI.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ipshared/0f38/hdl/mult_16_bit_v1_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ipshared/0f38/hdl/multiplier_16_bit.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_mult_16_bit_0_0/sim/mult_bd_ed_mult_16_bit_0_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_xbar_0/sim/mult_bd_ed_xbar_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_blk_mem_gen_0_0/sim/mult_bd_ed_blk_mem_gen_0_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/sim/mult_bd_ed.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_auto_pc_2/sim/mult_bd_ed_auto_pc_2.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_auto_pc_0/sim/mult_bd_ed_auto_pc_0.v" \
+"../../../../mult_soc_ed.ip_user_files/bd/mult_bd_ed/ip/mult_bd_ed_auto_pc_1/sim/mult_bd_ed_auto_pc_1.v" \
+"../../../../mult_soc_ed.gen/sources_1/bd/mult_bd_ed/hdl/mult_bd_ed_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

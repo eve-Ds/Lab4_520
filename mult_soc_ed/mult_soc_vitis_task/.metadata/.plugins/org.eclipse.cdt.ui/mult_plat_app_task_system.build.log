@@ -1,0 +1,11 @@
+19:01:05 **** Incremental Build of configuration Debug for project mult_plat_app_task_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 58244 C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm standalone_domain C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_app_task_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm --sys_config mult_plat_task --bif C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_app_task_system/Debug/system.bif --bitstream C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_app_task/_ide/bitstream/mult_bd_ed_wrapper.bit --elf C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_app_task/Debug/mult_plat_app_task.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_app_task/_ide/bitstream/mult_bd_ed_wrapper.bit
+Error intializing SD boot data : Software platform XML error, sdx:qemuArguments value "mult_plat_task/qemu/qemu_args.txt" path does not exist C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_task/export/mult_plat_task/sw/mult_plat_task/qemu/qemu_args.txt, platform path C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis_task/mult_plat_task/export/mult_plat_task, sdx:configuration mult_plat_task, sdx:image standard
+make: *** [makefile:37: package] Error 1
+
+19:01:10 Build Finished (took 5s.875ms)
+

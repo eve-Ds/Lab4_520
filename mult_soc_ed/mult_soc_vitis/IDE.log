@@ -1,0 +1,292 @@
+23:49:09 DEBUG : Logs will be stored at 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/IDE.log'.
+23:49:18 INFO  : Registering command handlers for Vitis TCF services
+23:49:18 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\temp_xsdb_launch_script.tcl
+23:49:19 INFO  : Platform repository initialization has completed.
+23:49:22 INFO  : XSCT server has started successfully.
+23:49:22 INFO  : plnx-install-location is set to ''
+23:49:28 INFO  : Successfully done setting XSCT server connection channel  
+23:49:28 INFO  : Successfully done query RDI_DATADIR 
+23:49:28 INFO  : Successfully done setting workspace for the tool. 
+23:51:47 INFO  : Result from executing command 'getProjects': mult_plat
+23:51:47 INFO  : Result from executing command 'getPlatforms': xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+23:56:41 ERROR : (XSDB Server)rm: cannot lstat `*.o': Invalid argument
+
+23:56:41 ERROR : (XSDB Server)make: *** [Makefile:42: clean] Error 1
+
+00:01:50 INFO  : Result from executing command 'getProjects': mult_plat
+00:01:50 INFO  : Result from executing command 'getPlatforms': mult_plat|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/mult_plat.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+11:36:06 INFO  : Checking for BSP changes to sync application flags for project 'mult_app'...
+11:37:31 INFO  : Checking for BSP changes to sync application flags for project 'mult_app'...
+11:51:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:51:20 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7AB6A' is selected.
+11:51:20 INFO  : 'jtag frequency' command is executed.
+11:51:20 INFO  : Context for 'APU' is selected.
+11:51:20 INFO  : System reset is completed.
+11:51:23 INFO  : 'after 3000' command is executed.
+11:51:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}' command is executed.
+11:51:25 INFO  : Device configured successfully with "C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/bitstream/mult_bd_ed_wrapper.bit"
+11:51:25 INFO  : Context for 'APU' is selected.
+11:51:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/hw/mult_bd_ed_wrapper.xsa'.
+11:51:25 INFO  : 'configparams force-mem-access 1' command is executed.
+11:51:25 INFO  : Context for 'APU' is selected.
+11:51:25 INFO  : Sourcing of 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/psinit/ps7_init.tcl' is done.
+11:51:26 INFO  : 'ps7_init' command is executed.
+11:51:26 INFO  : 'ps7_post_config' command is executed.
+11:51:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:51:26 INFO  : The application 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/Debug/mult_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:51:26 INFO  : 'configparams force-mem-access 0' command is executed.
+11:51:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}
+fpga -file C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/bitstream/mult_bd_ed_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/hw/mult_bd_ed_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/Debug/mult_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:51:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:51:26 INFO  : 'con' command is executed.
+11:51:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:51:26 INFO  : Launch script is exported to file 'C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\mult_app_system\_ide\scripts\debugger_mult_app-default.tcl'
+12:26:50 INFO  : Disconnected from the channel tcfchan#3.
+12:27:28 DEBUG : Logs will be stored at 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/IDE.log'.
+12:27:29 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\temp_xsdb_launch_script.tcl
+12:27:32 INFO  : XSCT server has started successfully.
+12:27:32 INFO  : Successfully done setting XSCT server connection channel  
+12:27:32 INFO  : plnx-install-location is set to ''
+12:27:32 INFO  : Successfully done setting workspace for the tool. 
+12:27:35 INFO  : Registering command handlers for Vitis TCF services
+12:27:35 INFO  : Platform repository initialization has completed.
+12:27:43 INFO  : Successfully done query RDI_DATADIR 
+12:32:12 INFO  : Result from executing command 'getProjects': mult_plat;mult_plat_task
+12:32:12 INFO  : Result from executing command 'getPlatforms': mult_plat|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/mult_plat.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+12:34:12 ERROR : (XSDB Server)rm: cannot lstat `*.o': Invalid argument
+
+12:34:12 ERROR : (XSDB Server)make: *** [Makefile:42: clean] Error 1
+
+12:37:41 INFO  : No changes in MSS file content so sources will not be generated.
+12:38:13 INFO  : Result from executing command 'getProjects': mult_plat;mult_plat_task
+12:38:13 INFO  : Result from executing command 'getPlatforms': mult_plat_task|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm;mult_plat|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/mult_plat.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+15:29:03 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
+15:29:20 INFO  : Checking for BSP changes to sync application flags for project 'mult_app'...
+15:30:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:11 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7AB6A' is selected.
+15:30:11 INFO  : 'jtag frequency' command is executed.
+15:30:11 INFO  : Context for 'APU' is selected.
+15:30:11 INFO  : System reset is completed.
+15:30:14 INFO  : 'after 3000' command is executed.
+15:30:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}' command is executed.
+15:30:15 INFO  : Device configured successfully with "C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/bitstream/mult_bd_ed_wrapper.bit"
+15:30:16 INFO  : Context for 'APU' is selected.
+15:30:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/hw/mult_bd_ed_wrapper.xsa'.
+15:30:16 INFO  : 'configparams force-mem-access 1' command is executed.
+15:30:16 INFO  : Context for 'APU' is selected.
+15:30:16 INFO  : Sourcing of 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/psinit/ps7_init.tcl' is done.
+15:30:16 INFO  : 'ps7_init' command is executed.
+15:30:16 INFO  : 'ps7_post_config' command is executed.
+15:30:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:17 INFO  : The application 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/Debug/mult_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:17 INFO  : 'configparams force-mem-access 0' command is executed.
+15:30:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}
+fpga -file C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/bitstream/mult_bd_ed_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/hw/mult_bd_ed_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app/Debug/mult_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:30:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:17 INFO  : 'con' command is executed.
+15:30:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:30:17 INFO  : Launch script is exported to file 'C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\mult_app_system\_ide\scripts\debugger_mult_app-default.tcl'
+15:30:29 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
+15:30:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:52 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7AB6A' is selected.
+15:30:52 INFO  : 'jtag frequency' command is executed.
+15:30:52 INFO  : Context for 'APU' is selected.
+15:30:52 INFO  : System reset is completed.
+15:30:55 INFO  : 'after 3000' command is executed.
+15:30:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}' command is executed.
+15:30:57 INFO  : Device configured successfully with "C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit"
+15:30:57 INFO  : Context for 'APU' is selected.
+15:30:57 INFO  : Hardware design and registers information is loaded from 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa'.
+15:30:57 INFO  : 'configparams force-mem-access 1' command is executed.
+15:30:57 INFO  : Context for 'APU' is selected.
+15:30:57 INFO  : Sourcing of 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl' is done.
+15:30:57 INFO  : 'ps7_init' command is executed.
+15:30:57 INFO  : 'ps7_post_config' command is executed.
+15:30:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:58 INFO  : The application 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:58 INFO  : 'configparams force-mem-access 0' command is executed.
+15:30:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}
+fpga -file C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:30:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:58 INFO  : 'con' command is executed.
+15:30:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:30:58 INFO  : Launch script is exported to file 'C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\mult_app_task_system\_ide\scripts\debugger_mult_app_task-default.tcl'
+15:31:43 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
+15:32:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:32:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7AB6A' is selected.
+15:32:10 INFO  : 'jtag frequency' command is executed.
+15:32:10 INFO  : Context for 'APU' is selected.
+15:32:10 INFO  : System reset is completed.
+15:32:13 INFO  : 'after 3000' command is executed.
+15:32:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}' command is executed.
+15:32:15 INFO  : Device configured successfully with "C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit"
+15:32:15 INFO  : Context for 'APU' is selected.
+15:32:15 INFO  : Hardware design and registers information is loaded from 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa'.
+15:32:15 INFO  : 'configparams force-mem-access 1' command is executed.
+15:32:15 INFO  : Context for 'APU' is selected.
+15:32:15 INFO  : Sourcing of 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl' is done.
+15:32:15 INFO  : 'ps7_init' command is executed.
+15:32:15 INFO  : 'ps7_post_config' command is executed.
+15:32:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:32:15 INFO  : The application 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:32:15 INFO  : 'configparams force-mem-access 0' command is executed.
+15:32:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}
+fpga -file C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:32:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:32:16 INFO  : 'con' command is executed.
+15:32:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:32:16 INFO  : Launch script is exported to file 'C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\mult_app_task_system\_ide\scripts\systemdebugger_mult_app_task_system_standalone.tcl'
+15:32:59 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
+15:33:22 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
+15:35:56 INFO  : Disconnected from the channel tcfchan#3.
+15:35:57 WARN  : channel "tcfchan#3" closed
+15:35:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:35:58 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7AB6A' is selected.
+15:35:58 INFO  : 'jtag frequency' command is executed.
+15:35:58 INFO  : Context for 'APU' is selected.
+15:35:58 INFO  : System reset is completed.
+15:36:01 INFO  : 'after 3000' command is executed.
+15:36:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}' command is executed.
+15:36:03 INFO  : Device configured successfully with "C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit"
+15:36:03 INFO  : Context for 'APU' is selected.
+15:36:03 INFO  : Hardware design and registers information is loaded from 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa'.
+15:36:03 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:03 INFO  : Context for 'APU' is selected.
+15:36:03 INFO  : Sourcing of 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl' is done.
+15:36:03 INFO  : 'ps7_init' command is executed.
+15:36:03 INFO  : 'ps7_post_config' command is executed.
+15:36:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:03 INFO  : The application 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:36:03 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7AB6A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7AB6A-13722093-0"}
+fpga -file C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/bitstream/mult_bd_ed_wrapper_2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/hw/mult_bd_ed_wrapper_2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_app_task/Debug/mult_app_task.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:04 INFO  : 'con' command is executed.
+15:36:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:36:04 INFO  : Launch script is exported to file 'C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\mult_app_task_system\_ide\scripts\systemdebugger_mult_app_task_system_standalone.tcl'
+18:02:36 DEBUG : Logs will be stored at 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/IDE.log'.
+18:02:37 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\temp_xsdb_launch_script.tcl
+18:02:42 INFO  : XSCT server has started successfully.
+18:02:42 INFO  : plnx-install-location is set to ''
+18:02:42 INFO  : Successfully done setting XSCT server connection channel  
+18:02:42 INFO  : Successfully done setting workspace for the tool. 
+18:02:43 INFO  : Registering command handlers for Vitis TCF services
+18:02:44 INFO  : Platform repository initialization has completed.
+18:02:53 INFO  : Successfully done query RDI_DATADIR 
+14:05:44 DEBUG : Logs will be stored at 'C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/IDE.log'.
+14:05:46 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\domev\ECE520\mult_soc_ed\mult_soc_vitis\temp_xsdb_launch_script.tcl
+14:05:48 INFO  : XSCT server has started successfully.
+14:05:48 INFO  : Successfully done setting XSCT server connection channel  
+14:05:48 INFO  : plnx-install-location is set to ''
+14:05:48 INFO  : Successfully done setting workspace for the tool. 
+14:05:50 INFO  : Platform repository initialization has completed.
+15:04:22 INFO  : Successfully done query RDI_DATADIR 
+15:04:25 INFO  : Registering command handlers for Vitis TCF services
+17:45:48 INFO  : Result from executing command 'getProjects': mult_plat;mult_plat_task
+17:45:48 INFO  : Result from executing command 'getPlatforms': mult_plat_task|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat_task/export/mult_plat_task/mult_plat_task.xpfm;mult_plat|C:/Users/domev/ECE520/mult_soc_ed/mult_soc_vitis/mult_plat/export/mult_plat/mult_plat.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+17:45:49 INFO  : Checking for BSP changes to sync application flags for project 'mult_app_task'...
